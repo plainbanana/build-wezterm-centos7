@@ -11,9 +11,3 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --de
 ENV CARGO_TARGET_DIR /wezterm-build
 
 WORKDIR /wezterm-src
-RUN git clone --depth=1 --branch=main --recursive https://github.com/wez/wezterm.git && \
-    cd wezterm && \
-    source /opt/rh/devtoolset-9/enable && \
-    source /root/.cargo/env && \
-    ./get-deps && \
-    cargo build --release --no-default-features
