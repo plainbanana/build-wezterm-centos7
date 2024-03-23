@@ -13,6 +13,7 @@ docker run --rm -v ./wezterm-build:/wezterm-build wezterm-builder-c7:latest /bin
 "
 
 tar -zcvf wezterm-c7-minimal-${WEZTERM_TAG}.tar.gz \
-  ./build/release/wezterm \
-  ./build/release/wezterm-gui \
-  ./build/release/wezterm-mux-server
+    -C ./wezterm-build/release \
+    ./wezterm \
+    ./wezterm-gui \
+    ./wezterm-mux-server
