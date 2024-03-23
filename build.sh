@@ -10,10 +10,10 @@ docker run --rm -v ./wezterm-build:/wezterm-build wezterm-builder-c7:latest /bin
     source /root/.cargo/env
     ./get-deps
     cargo build --release --no-default-features
-"
 
-tar -zcvf wezterm-c7-minimal-${WEZTERM_TAG}.tar.gz \
-    -C ./wezterm-build/release \
-    ./wezterm \
-    ./wezterm-gui \
-    ./wezterm-mux-server
+    tar -zcvf /wezterm-build/wezterm-c7-minimal-${WEZTERM_TAG}.tar.gz \
+        -C /wezterm-build/release \
+        ./wezterm \
+        ./wezterm-gui \
+        ./wezterm-mux-server
+"
